@@ -4,6 +4,7 @@ import {
   INITIAL_HANDLE_HEIGHT,
   INITIAL_SNAP_POINT,
 } from '../components/bottomSheet/constants';
+import { BottomSheetViewProps } from '../components/bottomSheetView/types';
 
 /**
  * Provides dynamic content height calculating functionalities, by
@@ -40,7 +41,9 @@ export const useBottomSheetDynamicSnapPoints = (
   }, []);
 
   // callbacks
-  const handleContentLayout = useCallback(
+  const handleContentLayout = useCallback<
+    Required<BottomSheetViewProps>['onLayout']
+  >(
     ({
       nativeEvent: {
         layout: { height },

@@ -1609,7 +1609,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
                     key="BottomSheetRootDraggableView"
                     style={contentContainerStyle}
                   >
-                    {typeof Content === 'function' ? <Content /> : Content}
+                    {typeof Content === 'function' ? Content() : Content}
 
                     {footerComponent && (
                       <BottomSheetFooterContainer
